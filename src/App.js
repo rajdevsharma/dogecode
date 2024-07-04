@@ -10,7 +10,7 @@ function App() {
     // Increment parameter every minute
     const intervalId = setInterval(() => {
       setParameter(prevParam => prevParam + 1);
-    }, 60000); // 60000 ms = 1 minute
+    }, 20000); // 60000 ms = 1 minute
 
     return () => clearInterval(intervalId); // Cleanup interval on unmount
   }, []);
