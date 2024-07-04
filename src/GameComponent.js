@@ -15,8 +15,7 @@ const GameComponent = () => {
 
       // Fetch and unpack game files
 
-      //const url = "https://rajdevsharma.github.io/dogecode/game/game.zip";
-      const url = "/Users/raj/dogecode/game/game.zip";
+      const url = "https://rajdevsharma.github.io/dogecode/game/game.zip";
       const zipResponse = await fetch(url);
       const zipBinary = await zipResponse.arrayBuffer();
       console.log(`zipBinary: ${zipBinary} ${zipBinary.byteLength}`);
