@@ -20,7 +20,7 @@ const GameComponent = ({ parameter }) => {
           import sys
           sys.path.append('/lib/python3.12/site-packages/caffeinefueled')
           import caffeinefueled.game
-          caffeinefueled.game.main(${param});
+          caffeinefueled.game.main("${param}");
         `);
       };
 
