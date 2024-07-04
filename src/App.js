@@ -4,7 +4,7 @@ import GameComponent from './GameComponent';
 
 function App() {
   return (
-    <GameComponent /> 
+    <GameComponent parameter="moon.ogg" /> 
   );
 }
 

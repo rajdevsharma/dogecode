@@ -882,7 +882,6 @@ class GameScene(Scene):
             if self.difficulty_increase_delay > 2500:
                 self.difficulty_increase_delay -= 500
             #print(self.difficulty_level, self.difficulty_increase_delay)
-
     def spawn_trail(self, x, y, colors, amount):
         for _ in range(amount):
             t = JetpackTrail(x, y, colors)
@@ -890,7 +889,7 @@ class GameScene(Scene):
             self.sprites.add(t)
 
 # Application loop
-async def main():
+async def main(music):
 
     # Initialize the window
     window = pygame.display.set_mode(WIN_SZ)
@@ -899,7 +898,7 @@ async def main():
     pygame.mouse.set_visible(False)
 
     # Load and play music
-    pygame.mixer.music.load(os.path.join(SFX_DIR, "moon.ogg"))
+    pygame.mixer.music.load(os.path.join(SFX_DIR, music))
     pygame.mixer.music.play(-1)
     pygame.mixer.music.set_volume(0.5)
 
