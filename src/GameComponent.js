@@ -14,7 +14,7 @@ const GameComponent = () => {
       pyodide.canvas.setCanvas2D(canvas);
 
       // Fetch and unpack game files
-      const zipResponse = await fetch("https://rajdevsharma.github.io/dogecode/game/CaffeineFueled.zip");
+      const zipResponse = await fetch("https://rajdevsharma.github.io/dogecode/game/game.zip");
       const zipBinary = await zipResponse.arrayBuffer();
       pyodide.unpackArchive(zipBinary, "zip", { extractDir: "/lib/python3.12/site-packages/caffeinefueled" });
 
