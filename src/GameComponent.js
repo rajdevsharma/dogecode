@@ -6,7 +6,7 @@ const GameComponent = () => {
   useEffect(() => {
     const loadGame = async () => {
       // Load Pyodide
-      const pyodide = await loadPyodide();
+      const pyodide = await window.loadPyodide();
       await pyodide.loadPackage(["pygame-ce"], { checkIntegrity: false });
 
       // Set up canvas
@@ -14,9 +14,12 @@ const GameComponent = () => {
       pyodide.canvas.setCanvas2D(canvas);
 
       // Fetch and unpack game files
-      const zipResponse = await fetch("https://rajdevsharma.github.io/dogecode/game/game.zip");
+
+      //const url = "https://rajdevsharma.github.io/dogecode/game/game.zip";
+      const url = "/Users/raj/dogecode/game/game.zip";
+      const zipResponse = await fetch(url);
       const zipBinary = await zipResponse.arrayBuffer();
-      console.log(`zipBinary: ${zipBinary}`);
+      console.log(`zipBinary: ${zipBinary} ${zipBinary.byteLength}`);
       pyodide.unpackArchive(zipBinary, "zip", { extractDir: "/lib/python3.12/site-packages/caffeinefueled" });
 
       // Run Python code

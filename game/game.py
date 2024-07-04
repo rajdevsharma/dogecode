@@ -899,7 +899,7 @@ async def main():
     pygame.mouse.set_visible(False)
 
     # Load and play music
-    pygame.mixer.music.load(os.path.join(SFX_DIR, "moon.mp3"))
+    pygame.mixer.music.load(os.path.join(SFX_DIR, "moon.ogg"))
     pygame.mixer.music.play(-1)
     pygame.mixer.music.set_volume(0.5)
 
